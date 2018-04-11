@@ -7,5 +7,5 @@ exports.saveIpInfo = (ipInfo) => {
             if (err) reject(err);
             resolve(rows)
         })
-    })
+    }).then(()=>{},(err)=>{console.log(err)})
 };
