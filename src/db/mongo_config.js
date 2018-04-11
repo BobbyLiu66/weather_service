@@ -5,7 +5,7 @@ const chooseEnv = require('./config').chooseEnv;
 
 const mongodb = {
     test: {
-        weather: "mongodb://bobby:bobbyliu@localhost:27017/weather",
+        weather: "mongodb://bobby:bobbyliu@13.211.150.239:27017/weather",
     },
     formal: {
         weather: "mongodb://bobby:bobbyliu@localhost:27017/weather",
