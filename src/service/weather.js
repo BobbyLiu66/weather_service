@@ -4,17 +4,27 @@ const tools = require('../util/tools');
 const request = require('request');
 const log = require('bunyan');
 
-exports.currentWeatherDate = async (ip) => {
-    console.log(ip);
-    let {city, countryCode} = await tools.getIpLocation(ip).catch((err) => {
-        log.ERROR(err)
-    });
-    let {_id} = await weatherMongo.getCityId(city, countryCode).catch((err) => {
-        log.ERROR(err)
-    });
-    return await getWeatherInfo(_id).catch((e) => {
-        log.ERROR(e)
-    });
+exports.currentWeatherDate = async (req, res, ip) => {
+    let {city, countryCode, getIpErr} = await tools.getIpLocation(ip);
+    if (getIpErr) {
+        res.status = 500;
+        res.json({err:getIpErr});
+        return
+    }
+    let {_id, getCityErr} = await weatherMongo.getCityId(city, countryCode);
+    if (getCityErr) {
+        res.status = 500;
+        res.json({err:getCityErr});
+        return
+    }
+    let {result, err} = await getWeatherInfo(_id);
+    if (err) {
+        res.status = 500;
+        res.json({err:getCityErr});
+        return
+    }
+    res.status = 200;
+    res.json(result)
 };
 
 function getWeatherInfo(cityId) {
@@ -27,9 +37,8 @@ function getWeatherInfo(cityId) {
             resolve(JSON.parse(body))
         })
     }).then((body) => {
-        console.log(body);
-        return body
+        return {result: body}
     }, (err) => {
-        return err
+        return {err: err}
     })
 }

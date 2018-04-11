@@ -29,7 +29,6 @@ exports.getIpLocation = (ip) => {
         })
     }).then(
         (result) => {
-            //TODO save in Mysql
             if(result.status === "success"){
                 weatherMysql.saveIpInfo(result);
                 return {
@@ -39,10 +38,12 @@ exports.getIpLocation = (ip) => {
             }
             else {
                 return {
-                    err:'something wrong, try again later'
+                    getIpErr:'something wrong, try again later'
                 }
             }
 
-        },(err)=>{return err})
+        },(err)=>{return {
+            getIpErr:err
+        }})
 };
 

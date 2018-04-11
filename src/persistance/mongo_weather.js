@@ -25,5 +25,5 @@ exports.getCityId = async (name,country) =>{
         name: regExp,
         country:country
     };
-    return await client.db('weather').collection('city_list').findOne(query).catch((err)=>{return err})
+    return await client.db('weather').collection('city_list').findOne(query).catch((err)=>{return {getCityErr:err}})
 };
