@@ -315,6 +315,14 @@ etag@~1.8.1:
   version "1.8.1"
   resolved "https://registry.yarnpkg.com/etag/-/etag-1.8.1.tgz#41ae2eeb65efa62268aebfea83ac7d79299b0887"
 
+express-ipfilter@^0.3.1:
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/express-ipfilter/-/express-ipfilter-0.3.1.tgz#66780a92f6ab42ce0c316e8724f814422d097433"
+  dependencies:
+    ip "~1.1.0"
+    lodash "~3.10.1"
+    range_check "^1.2.0"
+
 express@~4.16.0:
   version "4.16.3"
   resolved "https://registry.yarnpkg.com/express/-/express-4.16.3.tgz#6af8a502350db3246ecc4becf6b5a34d22f7ed53"
@@ -487,6 +495,18 @@ inherits@2, inherits@2.0.3, inherits@~2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/inherits/-/inherits-2.0.3.tgz#633c2c83e3da42a502f52466022480f4208261de"
 
+ip6@0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/ip6/-/ip6-0.0.4.tgz#44c5a9db79e39d405201b4d78d13b3870e48db31"
+
+ip@~1.1.0:
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/ip/-/ip-1.1.5.tgz#bdded70114290828c0a039e72ef25f5aaec4354a"
+
+ipaddr.js@1.2:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/ipaddr.js/-/ipaddr.js-1.2.0.tgz#8aba49c9192799585bdd643e0ccb50e8ae777ba4"
+
 ipaddr.js@1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/ipaddr.js/-/ipaddr.js-1.6.0.tgz#e3fa357b773da619f26e95f049d055c72796f86b"
@@ -579,6 +599,10 @@ lazy-cache@^1.0.3:
 lodash@^4.17.5:
   version "4.17.5"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.5.tgz#99a92d65c0272debe8c96b6057bc8fbfa3bed511"
+
+lodash@~3.10.1:
+  version "3.10.1"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-3.10.1.tgz#5bf45e8e49ba4189e17d482789dfd15bd140b7b6"
 
 longest@^1.0.1:
   version "1.0.1"
@@ -762,6 +786,13 @@ qs@6.5.1, qs@~6.5.1:
 range-parser@~1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/range-parser/-/range-parser-1.2.0.tgz#f49be6b487894ddc40dcc94a322f611092e00d5e"
+
+range_check@^1.2.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/range_check/-/range_check-1.4.0.tgz#cd87c7ac62c40ba9df69b8703c604f60c3748635"
+  dependencies:
+    ip6 "0.0.4"
+    ipaddr.js "1.2"
 
 raw-body@2.3.2:
   version "2.3.2"
