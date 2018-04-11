@@ -3,7 +3,6 @@ const router = express.Router();
 const requestIp = require('request-ip');
 const weather = require('../src/service/weather');
 const type = {current:"weather",forecast:"forecast"};
-/* GET home page. */
 
 router.get('/weather', (req, res) => {
     if(!type.hasOwnProperty(req.query.type)){
@@ -16,4 +15,6 @@ router.get('/weather', (req, res) => {
         weather.currentWeatherDate(req,res,clientIp);
     }
 });
+
+
 module.exports = router;

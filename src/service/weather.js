@@ -2,6 +2,7 @@
 const weatherMongo = require('../persistance/mongo_weather');
 const tools = require('../util/tools');
 const request = require('request');
+const CONFIG = require('../../configuration');
 
 exports.currentWeatherDate = async (req, res, ip) => {
     try {
@@ -35,7 +36,7 @@ function getWeatherInfo(cityId,type) {
     return new Promise((resolve, reject) => {
         request({
             method: "GET",
-            url: `http://api.openweathermap.org/data/2.5/${type}?id=${cityId}&APPID=676fb922b841e438eab020fcd29eaba6`
+            url: `http://api.openweathermap.org/data/2.5/${type}?id=${cityId}&APPID=${CONFIG.OPENWEATHERAPIKEY}`
         }, (err, res, body) => {
             if (err) reject(err);
             resolve(JSON.parse(body))

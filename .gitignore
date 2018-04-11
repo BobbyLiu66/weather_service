@@ -12,3 +12,6 @@ lib-cov
 
 #npm log
 npm-debug.log
+
+#configuration file
+configuration.js

@@ -1,6 +1,3 @@
-/**
- * Created by bo liu on 2016/8/20.
- */
 const bunyan = require('bunyan');
 let log = bunyan.createLogger({name: 'config'});
 let projectName = {

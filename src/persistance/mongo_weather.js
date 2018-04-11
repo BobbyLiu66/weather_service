@@ -9,21 +9,23 @@ exports.insert_city_list = async () => {
     let data = JSON.parse(fs.readFileSync(file_path).toString());
     _.forEach(data, (value) => {
         let obj = {
-            name:value.name,
-            country:value.country,
+            name: value.name,
+            country: value.country,
             _id: value.id,
-            coord:value.coord
+            coord: value.coord
         };
         client.db('weather').collection('city_list').insertOne(obj)
     });
 };
 
-exports.getCityId = async (name,country) =>{
+exports.getCityId = async (name, country) => {
     let client = await mongo_client;
     let regExp = new RegExp("^.*" + name + ".*$");
     let query = {
         name: regExp,
-        country:country
+        country: country
     };
-    return await client.db('weather').collection('city_list').findOne(query).catch((err)=>{return {getCityErr:err}})
+    return await client.db('weather').collection('city_list').findOne(query).catch((err) => {
+        return {getCityErr: err}
+    })
 };

@@ -1,18 +1,10 @@
-/**
- * Created by bo liu on 2016/8/20.
- */
 const chooseEnv = require('./config').chooseEnv;
+const CONFIG = require('../../configuration');
 
 const mongodb = {
-    test: {
-        weather: "mongodb://bobby:bobbyliu@localhost:27017/weather",
-    },
-    formal: {
-        weather: "mongodb://bobby:bobbyliu@localhost:27017/weather",
-    },
-    dev: {
-        weather: "mongodb://bobby:bobbyliu@localhost:27017/weather",
-    }
+    test: CONFIG.MONGODBTEST,
+    formal: CONFIG.MONGODBFORMAL,
+    dev: CONFIG.MONGODBDEV
 };
 
 exports.mongodb = chooseEnv(mongodb);

@@ -12,11 +12,3 @@ exports.mysql_client = () => {
     }
     return state.pool
 };
-
-// exports.mysql_client = (() => {
-//     if(state.pool === null) {
-//         state.pool = mysql.createPool(mysql_config.weather);
-//     }
-//     console.log("MYSQL READY");
-//     return state.pool
-// })();
