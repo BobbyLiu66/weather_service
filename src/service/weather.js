@@ -4,12 +4,10 @@ const tools = require('../util/tools');
 const request = require('request');
 const log = require('bunyan');
 
-//TODO call getIpLocation twice ?
 exports.currentWeatherDate = async (ip) => {
         let {city,countryCode} = await tools.getIpLocation(ip).catch((err)=>{log.ERROR(err)});
         let {_id} = await weatherMongo.getCityId(city, countryCode).catch((err)=>{log.ERROR(err)});
-        let result = await getWeatherInfo(_id).catch((e)=>{log.ERROR(e)});
-        console.log(result)
+        return await getWeatherInfo(_id).catch((e)=>{log.ERROR(e)});
 };
 
 function getWeatherInfo(cityId){

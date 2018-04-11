@@ -3,10 +3,11 @@ const router = express.Router();
 const weather = require('../src/service/weather');
 
 /* GET home page. */
-router.get('/', (req, res, next) => {
-    console.log(req.connection.remoteAddress);
-    // weather.currentWeatherDate(req.connection.remoteAddress);
-    next()
+router.get('/weather', (req, res) => {
+    const ipAddress = req.connection.remoteAddress.replace("::ffff:","");
+    const result = weather.currentWeatherDate(ipAddress);
+    res.statusCode = 200;
+    res.json(result)
 });
 
 
