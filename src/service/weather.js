@@ -23,6 +23,7 @@ exports.currentWeatherDate = async (req, res, ip) => {
         res.json({err:getCityErr});
         return
     }
+    console.log("city:",result.name);
     res.status = 200;
     res.json(result)
 };
