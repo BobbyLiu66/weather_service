@@ -10,7 +10,6 @@ var usersRouter = require('./routes/users');
 var app = express();
 
 var ips = [['61.151.0.1','61.151.255.255']];
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');

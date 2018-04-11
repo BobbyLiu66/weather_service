@@ -1,6 +1,6 @@
 'use strict';
 const request = require('request');
-const weatherMysql = require('../persistance/mysql_weather');
+const weatherMongo = require('../persistance/mongo_weather');
 
 exports.arrayToObj = (keys, values) => {
     let result = {};
@@ -28,9 +28,9 @@ exports.getIpLocation = (ip) => {
             }
         })
     }).then(
-        (result) => {
+        async (result) => {
             if (result.status === "success") {
-                weatherMysql.saveIpInfo(result);
+                weatherMongo.saveIpInfo(result);
                 return {
                     countryCode: result.countryCode,
                     city: result.city

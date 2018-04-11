@@ -29,3 +29,15 @@ exports.getCityId = async (name, country) => {
         return {getCityErr: err}
     })
 };
+
+exports.saveIpInfo = async (ipInfo) => {
+    let client = await mongo_client;
+    ipInfo._id = ipInfo.query;
+    delete ipInfo.query;
+    delete ipInfo.status;
+    client.db('weather').collection('ip_info').updateOne(ipInfo, {
+        $currentDate: {
+            lastModified: true
+        }
+    }, {"upsert": true})
+};

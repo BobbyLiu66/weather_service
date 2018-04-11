@@ -6,9 +6,8 @@ let state = {
 };
 
 exports.mysql_client = () => {
-    if(state.pool === null) {
-        state.pool = mysql.createPool(mysql_config.weather);
-        console.log("MYSQL READY");
-    }
+    state.pool = mysql.createPool(mysql_config.weather);
+    console.log("MYSQL READY");
     return state.pool
 };
+
