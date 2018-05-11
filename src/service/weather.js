@@ -6,7 +6,6 @@ const CONFIG = require('../../configuration');
 
 exports.currentWeatherDate = async (req, res, ip) => {
     try {
-        ip = "202.36.179.106";
         let {city, countryCode, getIpErr} = await tools.getIpLocation(ip);
         if (getIpErr) {
             res.status = 500;

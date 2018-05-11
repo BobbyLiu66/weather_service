@@ -8,6 +8,7 @@ this back end project could get current / 5 day 3 hour forecast weather infomati
 
 ### data sample
 current weather
+Get: http://localhost:3002/weather?type=current
 ```$xslt
 {  
    "coord":{  
