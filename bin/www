@@ -10,8 +10,8 @@ var http = require('http');
 var https = require('https');
 var fs = require('fs');
 var sslOptions = {
-    key: fs.readFileSync('../src/ssl/1530221692674.key'),
-    cert: fs.readFileSync('../src/ssl/public.pem')
+    key: fs.readFileSync('./src/ssl/1530221692674.key'),
+    cert: fs.readFileSync('./src/ssl/public.pem')
 };
 
 /**
