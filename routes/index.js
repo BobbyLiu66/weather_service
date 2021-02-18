@@ -11,7 +11,8 @@ router.get('/weather', (req, res) => {
     }
     else {
         req.query.type = type[req.query.type];
-        const clientIp = requestIp.getClientIp(req);
+        // const clientIp = requestIp.getClientIp(req)
+        const clientIp = "202.36.163.2";
         weather.currentWeatherDate(req,res,clientIp);
     }
 });

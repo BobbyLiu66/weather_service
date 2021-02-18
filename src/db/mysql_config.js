@@ -1,10 +1,10 @@
 const chooseEnv = require('./config').chooseEnv;
-const CONFIG = require('../../configuration');
+
 
 const mysql = {
-    test: CONFIG.MYSQLTEST,
-    formal: CONFIG.MYSQLFORMAL,
-    dev: CONFIG.MONGODBDEV
+    test: 'mongodb://localhost:27017/chat',
+    formal: 'mongodb://localhost:27017/chat',
+    dev: 'mongodb://localhost:27017/chat'
 };
 
 exports.mysql = chooseEnv(mysql);
